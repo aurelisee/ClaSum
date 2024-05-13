@@ -1,0 +1,28 @@
+Date: 2020-07-08T10:52:52.439Z
+Electron: 7.3.2
+Chrome: 78.0.3904.130
+Node.js: 12.8.1
+V8: 7.8.279.23-electron.0
+OS: Windows_NT x64 10.0.19041
+OS version: Windows_NT x64 10.0.17763
+OS version: Windows_NT x64 10.0.17763
+Version: 1.47.0
+Date: 2020-07-09T08:30:34.302Z
+Electron: 7.3.2
+Chrome: 78.0.3904.130
+Node.js: 12.8.1
+V8: 7.8.279.23-electron.0
+OS: Linux x64 5.7.7-200.fc32.x86_64
+OS version: Windows_NT x64 10.0.18363
+OS version: Windows_NT x64 10.0.18362
+Version: 1.48.0-insider (user setup)
+Date: 2020-08-04T05:32:46.194Z
+Electron: 7.3.2
+Chrome: 78.0.3904.130
+Node.js: 12.8.1
+V8: 7.8.279.23-electron.0
+OS: Windows_NT x64 10.0.20180
+1.Download the vscode extension samples: (https://github.com/microsoft/vscode-extension-samples.git)
+2.Modify the html in the cat coding webview sample to have a ```<textarea>```
+3.Run the cat coding webview
+4.Paste some text into the text area.

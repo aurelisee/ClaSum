@@ -1,0 +1,11 @@
+OS version: Darwin x64 19.4.0
+Version: 1.50.0-insider
+Date: 2020-09-15T05:31:36.744Z
+Electron: 9.3.0
+Chrome: 83.0.4103.122
+Node.js: 12.14.1
+V8: 8.3.110.13-electron.0
+OS: Darwin x64 19.5.0
+1. Open up Visual Studio Code (and/or Insiders)
+2. Create any new file
+3. Attempt to save file as a "Python" file in the dropdown

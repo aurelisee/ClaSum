@@ -1,0 +1,2 @@
+- VSCode Version: 1.16.0
+- OS Version: Win 10, up to date

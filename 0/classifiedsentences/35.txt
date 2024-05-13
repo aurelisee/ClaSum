@@ -1,0 +1,8 @@
+Version: 1.83.1 (system setup)
+Date: 2023-10-10T23:48:05.904Z
+Electron: 25.8.4
+ElectronBuildId: 24154031
+Chromium: 114.0.5735.289
+Node.js: 18.15.0
+V8: 11.4.183.29-electron.0
+OS: Windows_NT x64 10.0.19045

@@ -1,0 +1,9 @@
+- OS Version: Windows_NT ia32 10.0.15063
+- VSCode Version: 1.13.0-insider
+- OS Version: Windows 10
+1.Set Git-Bash as the integrated terminal:
+2.Define a task using tasks version 2.0.0:
+3.Execute run task
+1.Install PowerShell to a directory with a space in the path (I\'m using PowerShell 6.0-beta.2, which by default installs to `C:/Program Files/PowerShell`).
+2.Change `"terminal.integrated.shell.windows"` to point to this path (e.g.
+3.Try to run a task, either with `"isShellComand": true` or `"type": "shell"`.

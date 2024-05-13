@@ -1,0 +1,27 @@
+OS version: Linux x64 5.15.0-43-generic
+OS Version: Windows 10 Pro 21H2
+Version: 1.70.0 (user setup)
+Date: 2022-08-04T04:38:16.462Z
+Electron: 18.3.5
+Chromium: 100.0.4896.160
+Node.js: 16.13.2
+V8: 10.0.139.17-electron.0
+OS: Windows_NT x64 10.0.22000
+1. Until a recent pre-release of vscode, vscode has always autoReloaded the saved python code when I started the debugger, without any flags set to enforce it.
+2. That would make it the expected behaviour for many users/developers.
+3. Why would the developer restart the debugger if not to load the saved code.
+4. In the odd-case that a developer would not want to debug the code which has just been saved, they could always disable autoReload by setting the autoReload flag.
+5.     Work around
+6.       {
+7.           "key": "ctrl+shift+f5",
+8.           "command": "extension.multiCommand.execute",
+9.           "args": 
+10.         {
+11.             "command": "multiCommand.restartDebug",
+12.             "interval": 30,
+13.             "sequence": [
+14.                 "saveAll",
+15.                 "workbench.action.debug.restart",
+16.             ]
+17.         }
+18.     }

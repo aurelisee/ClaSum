@@ -1,0 +1,21 @@
+OS version: Darwin x64 19.5.0
+OS version: Darwin x64 18.7.0
+OS version: Linux x64 4.19.0-9-amd64
+OS version: Windows_NT x64 10.0.19041
+OS version: Windows_NT x64 10.0.19631
+VSCode Version: 1.46.0-insider
+OS Version: Fedora 31
+Version: 1.46.0-insider
+Date: 2020-05-26T17:07:53.549Z
+Electron: 8.3.0
+Chrome: 80.0.3987.165
+Node.js: 12.13.0
+V8: 8.0.426.27-electron.0
+OS: Darwin x64 19.5.0
+OS version: Darwin x64 19.4.0
+OS version: Darwin x64 18.7.0
+1. Sign out of VSCode
+2. Click turn on preferences sync, sign in, then sign in with GitHub
+1. One single window open
+2. No changes in settings or extensions that I triggered
+3. The machine was in sleep mode since 5/26, 8am PT, and when I woke it up I saw the notification

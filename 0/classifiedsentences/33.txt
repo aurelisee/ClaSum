@@ -1,0 +1,5 @@
+- VS Code Version: 1.83.1
+- OS Version: Windows 10
+1. Open a file
+2. Click "Ctrl + \ " (notebook.cell.split)
+3. Close the split

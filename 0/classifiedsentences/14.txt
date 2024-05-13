@@ -1,0 +1,4 @@
+OS version: Windows_NT x64 6.1.7601
+1.Open any document
+2.Open any extension (see readme)
+3.Click en [|] button for see Two Columns Layouts

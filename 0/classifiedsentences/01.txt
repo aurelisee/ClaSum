@@ -1,0 +1,14 @@
+- MacOS: 12.3.1
+- VSCode: 1.67.0-insider
+版本: 1.69.2 (Universal)
+提交: 3b889b090b5ad5793f524b5d1d39fda662b96a2a
+日期: 2022-07-18T16:12:57.074Z
+Electron: 18.3.5
+Chromium: 100.0.4896.160
+Node.js: 16.13.2
+V8: 10.0.139.17-electron.0
+OS: Darwin x64 21.5.0
+1. copy words `获取模板 25235168 的预览图失败
+2. double click on the number
+1. Prerequisite: I have enabled the mouse selection and copy function in the terminal, and the right mouse button paste function
+2. When I double-click to select "我是一个中国人" and paste it, the word "我" is lost', 'Upstream: https://github.com/xtermjs/xterm.js/issues/4001

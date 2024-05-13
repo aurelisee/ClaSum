@@ -1,0 +1,21 @@
+- VSCode Version: 1.45.1
+- OS Version: Windows 10
+1st dnd:  utils/m*.ts -> funcs/m*.ts
+2st dnd:  funcs/m*.ts -> utils/m*.ts
+3rd dnd:  utils/m*.ts -> funcs/m*.ts
+Version: 1.46.0-insider (user setup)
+Date: 2020-05-27T05:43:41.115Z
+Electron: 7.2.4
+Chrome: 78.0.3904.130
+Node.js: 12.8.1
+V8: 7.8.279.23-electron.0
+OS: Windows_NT x64 10.0.18363
+OPEN: output:extension-output-%234
+1st dnd:  utils/m*.ts -> funcs/m*.ts
+2st dnd:  funcs/m*.ts -> utils/m*.ts
+3rd dnd:  utils/m*.ts -> funcs/m*.ts
+1.Open sample node project below in VS Code.
+2.Set the setting **"typescript.updateImportsOnFileMove.enabled": "always"** or **"never"**.
+3.Click to open multiple files (e.g.
+4.In File Explorer, drag and drop these files back and forth several times, e.g.
+5.You would see the states for these opened editors are in chaos.

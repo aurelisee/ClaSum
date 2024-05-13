@@ -1,0 +1,7 @@
+VS Code Version: VS Code v1.84.1
+OS version: Windows_NT x64 10.0.19045
+Version: 1.84.2 (user setup)
+1. Click or hover over a color square in a document, like `settings.json`
+2. Color picker opens
+3. Click on the slider on the right to change hue
+4. Color picker closes before you can actually pick the color you want

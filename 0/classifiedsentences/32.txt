@@ -1,0 +1,8 @@
+VS Code Version: 1.82.2
+Electron: 25.8.1, inside flatpak
+- OS Version: Linux x64 6.5.7-200.fc38.x86_64
+1. Install vscode via flatpak
+2. Remove access to filesystem /etc/shells (e.g. by restricting fs-access)
+3. Start vscode instance and open a new terminal.
+4. Log-output shows that /etc/shells cannot be read (obviously)
+5. profile-settings for terminal are not considered properly

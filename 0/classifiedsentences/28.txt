@@ -1,0 +1,4 @@
+OS version: Darwin arm64 23.1.0
+OS version: Windows_NT x64 10.0.19045
+1. Focus in chat view or another view so that the explorer is not visible
+2. Trigger the `revealInExplorer` command with a folder that exists

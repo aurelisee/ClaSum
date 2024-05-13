@@ -1,0 +1,6 @@
+1. Windows (maybe not needed?)
+2. Set `"terminal.integrated.developer.devMode": true`
+3. Open terminal
+4. Write some text, note the cursor location
+5. Focus an editor
+6. Focus the terminal, ???? the cursor is at the start of the textbox

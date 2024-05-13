@@ -1,0 +1,4 @@
+I'm on Version: 1.52.1
+1.get an update and download the update
+2.Main menu (or Gear) -> click on the Restart button so the update gets applied
+3.VS Code insiders is closed but does not start 🐛

@@ -1,0 +1,12 @@
+- VSCode Version: 1.8.1
+- OS Version: CentOS 7.3 (x64)
+Version: 1.40.2
+Date: 2019-11-25T14:54:40.719Z
+Electron: 6.1.5
+Chrome: 76.0.3809.146
+Node.js: 12.4.0
+V8: 7.6.303.31-electron.0
+OS: Linux x64 5.3.13-300.fc31.x86_64
+1.Install CentOS 7.3 minimal ISO to a new VM
+2.sudo yum install code-1.8.1-1482158209.el7.x86_64.rpm
+3.code .

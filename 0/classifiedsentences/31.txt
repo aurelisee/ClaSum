@@ -1,0 +1,13 @@
+OS Version: macOS AMD64
+OS Version: Apple M2
+Flutter Toolkit version: v2.1.1
+1. Provide code action via language server. Example from [Snyk Extension](https://marketplace.visualstudio.com/items?itemName=snyk-security.snyk-vulnerability-scanner):
+2. When opening the `Quickfixes...` menu, the code action command is automatically executed on mouse-over/selection.
+1. Install the Snyk extension
+2. Trust & Authenticate against Snyk (opens browser)
+3. Run an IaC or Snyk Code scan (Snyk Open Source only exhibits this behaviour if you install the "Preview" Snyk extension)
+4. When having a squiggly line, click the light bulb / go to "Quickfixes" in the hover menu
+5. Move the mouse over e.g. "Learn about..." or "Open Description..." code actions.
+1. Install Flutter Toolkit extension
+2. Create a new class with some parameters
+3. Hover the mice over the suggestions in "Quick Fix"

@@ -1,0 +1,11 @@
+VS Code Version: 1.84.2
+OS Version: Windows 11 x64 (22H2, 22621.2715)
+1. Open a local project that's a Git repository
+2. Make some changes
+3.IMPORTANT: make sure to have multiple commit messages available as auto-complete
+4.Cycle through the commit messages, pick one (but a wrong one, accidents do happen! 😉)
+5.Commit with that message
+6.Since the message is wrong - click on the Source dot menu
+7.Click on Commit > Undo Last Commit
+8.Pick the correct commit message
+9.Commit with the correct message and see the commit message from step 4 disappearing (for good...)

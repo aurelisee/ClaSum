@@ -1,0 +1,8 @@
+OS version: Darwin x64 19.4.0
+- OS Version: Ubuntu MATE 20.04
+1. Save [this](https://raw.githubusercontent.com/saveriomiroddi/personal_notes/f6af9dce9cebe479c9f17d80a5c758746cb68dd7/debian_packaging_ppas.md) file locally (it happens also with other files; this is a file I\'ve been able to reproduce it consistently with)
+2. Launch VSC
+3. Open the file above
+4. Tap Ctrl+K, V
+5. Now, perform the following sequence without leaving the finger from Ctrl:   - Ctrl + 1, Ctrl + End, Ctrl + 2, Ctrl + W
+6. The keyboard is now locked! Tapping any key/combination doesn\'t have any effect.

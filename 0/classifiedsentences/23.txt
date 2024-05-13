@@ -1,0 +1,4 @@
+OS version: Darwin arm64 22.1.0
+1. Open Zen Mode
+2. Go to View > Appearance
+3. Check that the Tab Bar submenu is not visible

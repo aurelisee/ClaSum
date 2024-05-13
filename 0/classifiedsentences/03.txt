@@ -1,0 +1,13 @@
+OS version: Windows_NT x64 6.3.9600
+OS version: Windows_NT x64 10.0.19044
+OS version: Darwin arm64 21.6.0
+Version: 1.71.0-insider
+Date: 2022-08-09T09:41:36.494Z
+1. Set `git.postCommitCommand` to `push` or `sync`
+2.       Make a change to one or more files
+3.       Type in a commit message
+4.       Hit Command + Enter
+1.       Set git.postCommitCommand to push or sync
+2.       Make a change to one or more files
+3.       Type in a commit message
+4.       Hit Command + Enter

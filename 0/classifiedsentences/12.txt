@@ -1,0 +1,31 @@
+Version: 1.46.0-insider
+Date: 2020-05-28T08:50:53.373Z
+Electron: 7.3.0
+Chrome: 78.0.3904.130
+Node.js: 12.8.1
+V8: 7.8.279.23-electron.0
+OS: Windows_NT x64 10.0.17763
+- OS Version: Windows 10
+Version: 1.46.0-insider (user setup)
+Date: 2020-05-28T08:50:53.373Z
+OS: Windows_NT x64 10.0.18363
+OS version: Windows_NT x64 10.0.19041
+OS version: Darwin x64 20.0.0
+- OS Version: macOS 10.15.5
+OS version: Linux x64 5.3.0-53-generic
+flash_3d: unavailable_off
+flash_stage3d: unavailable_off
+flash_stage3d_baseline: unavailable_off
+Version: 1.46.0-insider (user setup)
+Date: 2020-05-29T05:51:32.662Z
+1.Fresh install of VSCode Insider 1.46.0 (also tried the zip package)
+2.Try to install any extension (tried multiple popular extensions with same result)
+3.Error message appears: ![image](https://user-images.githubusercontent.com/8875306/83142627-0cc4ad80-a0f1-11ea-8b4a-687ae0e3a873.png)
+4.Console in developer tools shows this: ![image](https://user-images.githubusercontent.com/8875306/83142706-27972200-a0f1-11ea-9a78-856a4edbfde9.png)
+1) VSCode Smoke Tests (Electron)
+1.Update your system to latest macOS
+2.Try to install anything
+1.install extension and Reload window
+2.Try to remove extension: I can see progress indicator above the list, but list is not updated (also I think search also broken after that)
+3.Reload window - extension I tried to uninstall still in the list, but I see "Extensions have been modified on disk.
+4.Click on Reload window in notification  - extension is gone

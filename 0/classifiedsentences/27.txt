@@ -1,0 +1,9 @@
+2. Call Command: View: Focus Activity Bar 
+Version: 1.84.0
+Date: 2023-11-01T11:29:04.398Z
+OS version: Windows_NT x64 10.0.22000
+- OS Version: macOS 13.3.1 (a) 
+1. Select the Activity Bar Position as Hidden
+2. Call Command: View: Focus Activity Bar 
+1. Set activity bar position to hidden
+2. Open command palette and activate View: Focus activity bar

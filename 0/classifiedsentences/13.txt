@@ -1,0 +1,11 @@
+OS version: Linux x64 5.0.0-32-generic
+\ttransform: translateY(0);
+OS version: Windows_NT x64 6.1.7601
+1.Open any file
+2.Hit `CTRL+H` to open the Search and Replace bar
+3.In the Replace field, hit `Shift+Enter` to add a line return
+4.Close the bar
+1.Open replace dialog box ("Edit-Replace" or Ctrl+H)
+2.Select "replace with" input box (bottommost)
+3.Type in several words, separated with Ctrl+Enter or Shift+Enter
+4.Close dialog (Esc)

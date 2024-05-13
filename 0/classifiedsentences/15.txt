@@ -1,0 +1,23 @@
+OS version: Windows_NT x64 10.0.18362
+- VSCode Version: 1.38.0
+- OS Version: ubuntu 16.04 LTS
+Version: 1.38.1
+Date: 2019-09-11T13:31:32.854Z
+Electron: 4.2.10
+Chrome: 69.0.3497.128
+Node.js: 10.11.0
+V8: 6.9.427.31-electron.0
+OS: Darwin x64 18.7.0
+OS Version: Windows 10 Pro 1809 x64 2019-03B
+C/C++ Extension Version: 0.25.1
+Version: 1.38.1
+Date: 2019-09-11T13:31:32.854Z
+Electron: 4.2.10
+Chrome: 69.0.3497.128
+Node.js: 10.11.0
+V8: 6.9.427.31-electron.0
+OS: Darwin x64 18.7.0
+1.set "C_Cpp: Intelli Scese Engine" to "Tag Parser" so there will be multiple results with "Go to definition"
+2.Press F12 on variables/functions which have multiple definitions
+3.Press Enter
+4.nothing happen

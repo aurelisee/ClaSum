@@ -1,0 +1,5 @@
+- VS Code Version: 1.83.1
+- OS Version: Ubuntu 23.04
+1. In VSCode, open two terminals
+2. Inspect the terminal tabs using chrome devtools
+3. Notice that both terminal tabs have `aria-label="[object Object]"`
