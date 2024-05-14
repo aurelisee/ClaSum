@@ -1,0 +1,59 @@
+Steps to Reproduce:
+1. Select the Activity Bar Position as Hidden
+2. Call Command: View: Focus Activity Bar 
+Then:
+![xxx1](https://github.com/microsoft/vscode/assets/9378047/b07ff566-9034-47e3-b3ec-451bedf5c3a4)
+Activity Bar still takes up screen space, but doesn't display the icons
+Date: 2023-11-01T11:29:04.398Z
+Browser: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.84.0 Chrome/114.0.5735.289 Electron/25.9.2 Safari/537.36
+![forcus3](https://github.com/microsoft/vscode/assets/9378047/a6bb2b8d-b820-40fc-bf3c-2ca315e57325)
+Type: **Bug**
+When I open VS Code, everything works fine, but when I try to press any shortcuts for the sidebar (Ctrl+Shift+E, among others), it doesn't respond. Even so, open-close sidebar and terminal panel still work (Ctrl+J, Ctrl+B).
+This issue is only fixed by restarting the editor, but it only works once or twice.
+OS version: Windows_NT x64 10.0.22000
+Modes:
+| Item                    | Value                                              |
+| CPUs                    | 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz (8 x 2803) |
+| Load (avg)              | undefined                                          |
+| Memory (System)         | 15.79GB (6.20GB free)                             |
+| Screen Reader           | no                                                 |
+LogFileHighlighter        | emi                 | 2.16.0
+prettier-vscode           | esb                 | 10.1.0
+copilot                   | Git                 | 1.133.0
+copilot-chat              | Git                 | 0.10.0
+latex-snippets-jeff       | Jef                 | 1.2.3
+nbpreviewer               | jit                 | 1.2.2
+git-graph                 | mhu                 | 1.30.0
+python                    | ms-                 | 2023.20.0
+jupyter-keymap            | ms-                 | 1.1.2
+jupyter-renderers         | ms-                 | 1.0.17
+vscode-jupyter-slideshow  | ms-                 | 0.1.5
+material-icon-theme       | PKi                 | 4.31.0
+subtle-brackets           | raf                 | 3.0.0
+vscode-thunder-client     | ran                 | 2.15.0
+LiveServer                | rit                 | 5.7.9
+indenticator               | Sir                | 0.7.0
+latex-support              | tor                | 3.10.0
+python383cf:30185419
+pythontb:30283811
+pythonptprofiler:30281270
+vsclangdf:30486550
+azure-dev_surveyone:30548225
+pythonfmttext:30731395
+fixshowwlkth:30771522
+pythonidxpt:30866567
+pythonnoceb:30805159
+pythontestfixtcf:30871695
+pythoncet00cf:30874137
+pythontbext0:
+This is probably related to the `"workbench.activityBar.location": "hidden"` setting. 
+- If you hide the Activity Bar during a session (without closing and reopening VSCode), these issues don't appear. It's only after reopening VSCode when the Activity Bar was previously set to hidden that these issues appear.
+- In the control panel, after you select "View: Hide Activity Bar," there is no option to show it again. 
+- If the Activity Bar is hidden and you select "View: Focus Activity Bar," the UI space for the Activity Bar will be revealed, but the Activity Bar content will still be hidden.
+Does this issue occur when all extensions are disabled?: Yes
+- VS Code Version: Version: 1.84.0 (Universal)
+- OS Version: macOS 13.3.1 (a) 
+Steps to Reproduce:
+1. Set activity bar position to hidden
+2. Open command palette and activate View: Focus activity bar
+<img width="1512" alt="Screenshot 2023-11-03 at 21 56 20" src="https://github.com/microsoft/vscode/assets/1473433/ac944793-afd4-4806-9836-0a910229907d">

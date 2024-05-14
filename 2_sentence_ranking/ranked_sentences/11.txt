@@ -1,0 +1,14 @@
+Does this issue occur when all extensions are disabled?: Yes, as the included terminal is part of the core-editor.
+VS Code Version: 1.82.2
+Commit abd2f3db
+Electron: 25.8.1, inside flatpak
+- OS Version: Linux x64 6.5.7-200.fc38.x86_64
+2. Remove access to filesystem /etc/shells (e.g. by restricting fs-access)
+4. Log-output shows that /etc/shells cannot be read (obviously)
+Explanation: Sometimes this file might not be accessible or available.
+Semantically, this should result in expected behavior: If `/etc/shells` file does not exist, any attempt of reading it is useless.
+Needing to acknowledge a notification every time a user opens the program seems overly intrusive? 
+A missing shells file just implies that the system does not provide that information. 
+As there is already some way to configure the terminal profile explicitly, I don't consider the missing (and implicit!) system information harmful? 
+Even with no configuration, the terminal stays somewhat usable _(no hard program-crash or similar!)_. 
+Is this the right set-up? The Terminal output is empty, no error or warning

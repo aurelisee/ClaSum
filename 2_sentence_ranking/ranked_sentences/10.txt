@@ -1,0 +1,23 @@
+Does this issue occur when all extensions are disabled?: Yes
+The 'Help > Report Issue' dialog can assist with this. -->
+- VS Code Version: 1.83 & 1.84-insider NOT: 1.80.2
+OS Version: macOS AMD64
+Steps to Reproduce:
+2. When opening the `Quickfixes...` menu, the code action command is automatically executed on mouse-over/selection.
+This is happening with current vscode versions, but not with 1.80.2 released in June, both using the same Snyk extension version. 
+Sorry to ping again about it, but this is rather a bad UX for users - any chance to have a look at it, @mjbvz?
+I wasn't able to repro then in flutter, but taking a look at it again
+Looking into this atm! @bastiandoetsch I'm unable to recreate in the Synk extension - is there a specific command that the extension contributes that causes this?
+"Local" code actions that directly interface with VSCode don't show this behavior.
+1. Install the Snyk extension
+3. Run an IaC or Snyk Code scan (Snyk Open Source only exhibits this behaviour if you install the "Preview" Snyk extension)
+Does this issue occur when all extensions are disabled?: Yes/No
+VS Code Version: September 2023 (version 1.83)
+OS Version: Apple M2
+Auto insertion happens when I hover the mice over the suggestions in "Quick Fix".
+1. Install Flutter Toolkit extension
+2. Create a new class with some parameters
+@luizcamposmc I was unable to reproduce this. 
+Does this happen in the latest 1.84 release and is it only with flutter/dart?
+closing as it's a /duplicate #196589
+Code actions that didn't have definite edits were being re-run via the additional call to resolve (which called resolveCodeAction when there were no edits), which results in some code actions being immediately run on hover.

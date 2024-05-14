@@ -1,0 +1,60 @@
+Type: <b>Bug</b>
+- Choose "View" -> "Appearance" -> "Tab bar" -> "Single tab"
+- Enter "Zen mode"
+You will see multiple tabs
+- Right-clicking the tab bar and selecting the options under "Tab Bar" have no effect
+You can get "un-stuck" here by:
+- Exiting "Zen mode"
+- Enter "Zen mode"
+VS Code version: Code 1.84.0 (Universal) (d037ac076cee195194f93ce6fe2bdfe2969cc82d, 2023-11-01T11:30:19.406Z)
+OS version: Darwin arm64 22.1.0
+Modes:
+|Item|Value|
+|CPUs|Apple M1 (8 x 24)|
+|Load (avg)|2, 2, 2|
+|Memory (System)|16.00GB (1.88GB free)|
+|Screen Reader|no|
+Extension|Author (truncated)|Version
+vscode-tailwindcss|bra|0.10.3
+vscode-eslint|dba|2.4.2
+xml|Dot|2.5.1
+gitlens|eam|14.4.1
+prettier-vscode|esb|10.1.0
+godot-tools|gee|1.3.1
+copilot|Git|1.134.0
+copilot-chat|Git|0.8.0
+vscode-pull-request-github|Git|0.76.0
+gc-excelviewer|Gra|4.2.58
+vscode-drawio|hed|1.6.6
+vscode-docker|ms-|1.27.0
+csharp|ms-|2.9.20
+vscode-dotnet-runtime|ms-|2.0.0
+mono-debug|ms-|0.16.3
+vsliveshare|ms-|1.0.5892
+vsliveshare-pack|ms-|0.4.0
+focus|Qua|0.3.0
+gdscript-toolkit-formatter|Raz|1.2.3
+code-spell-checker|str|3.0.1
+(1 theme extensions excluded)
+pythontb:30283811
+pythonptprofiler:30281270
+vsclangdf:30486550
+azure-dev_surveyone:30548225
+pythonfmttext:30731395
+fixshowwlkth:30771522
+pythonidxpt:30866567
+pythonnoceb:30805159
+pythoncet00cf:30874137
+This is why when switching into zen mode you suddenly have multiple tabs. 
+However, the "Tab Bar" menus should adapt to the zen mode settings when in that mode.
+So the bug is that the menu options do not set `zenMode.showTabs` when in zen mode?
+This pull request updates the preconditions for editor tab actions and menu items to exclude Zen Mode. 
+This change ensures that the editor tab actions and menu items are not available when the editor is in Zen Mode.
+I had a closer look and realized that even if we make these submenus change the showTabs setting of the zen mode, they won't update right away in the UI. 
+This is because zen mode setting changes only apply the next time you activate zen mode again. 
+![Screenshot](https://github.com/microsoft/vscode/assets/26030610/34e6eca3
+You are right, Fix it in #199603
+verification steps:
+1. Open Zen Mode
+2. Go to View > Appearance
+3. Check that the Tab Bar submenu is not visible

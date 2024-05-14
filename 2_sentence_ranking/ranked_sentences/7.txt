@@ -1,0 +1,61 @@
+Type: **Bug**
+1. Focus in chat view or another view so that the explorer is not visible
+2. Trigger the `revealInExplorer` command with a folder that exists
+**bug**
+Explorer shows but the file is not revealed. 
+let disposable = vscode.commands.registerCommand('test-ext.helloWorld', () => {
+    vscode.commands.executeCommand('revealInExplorer', uri);
+VS Code version: Code - Insiders 1.85.0-insider (Universal) (a9d8fbca9ec9a7914f2077a83ca66a08c7e10f83, 2023-11-02T09:04:13.888Z)
+OS version: Darwin arm64 23.1.0
+Modes:
+|Load (avg)|7, 8, 8|
+|Memory (System)|64.00GB (8.54GB free)|
+|Screen Reader|no|
+Seems to be caused by this code which triggers a second call to reveal the active editor file when the explorer is revealed:
+This one was quite challenging; there are two race conditions here both preventing selecting directories the first when no files are open and the second when an active file is open. 
+This is caused by the visibility callback firing and resetting the tree input and then selecting the active file. 
+Both of these can mess with a selection that was applied earlier.
+I don't get what "Explorer shows but the file is not revealed." means. 
+@rzhao271 When this command is run, it is supposed to open the explorer and also highlight/select the target file in the explorer.
+That second part is what wasn't working
+If the explorer is already open and I do the same thing, it works.
+If explorer.autoReveal=false, then it works.
+OS version: Windows_NT x64 10.0.19045
+Modes:
+Connection to 'ssh-remote+192.168.2.4' could not be established
+|Load (avg)|undefined|
+|Screen Reader|no|
+Connection to 'ssh-remote+192.168.2.4' could not be established
+Extension|Author (truncated)|Version
+vscode-browser-preview|auc|0.7.2
+vscode-eslint|dba|2.4.0
+githistory|don|0.6.19
+xml|Dot|2.5.1
+vscode-test-explorer|hbe|2.21.1
+rest-client|hum|0.25.1
+vscode-edit-csv|jan|0.7.3
+vscode-jest-test-adapter|kav|0.8.1
+remote-containers|ms-|0.266.1
+remote-ssh|ms-|0.96.0
+remote-ssh-edit|ms-|0.84.0
+remote-wsl|ms-|0.72.0
+vscode-remote-extensionpack|ms-|0.24.0
+hexeditor|ms-|1.9.9
+remote-explorer|ms-|0.2.0
+remote-server|ms-|1.0.0
+vscode-subword-navigation|ow|1.2.0
+java|red|1.15.0
+m6800-as0|Ryu|0.0.5
+sass-indented|syl|1.8.26
+intellicode-api-usage-examples|Vis|0.2.7
+vscode-java-debug|vsc|0.49.0
+vscode-java-pack|vsc|0.25.8
+vscode-java-test|vsc|0.38.1
+vscode-maven|vsc|0.40.4
+pythontb:30283811
+pythondataviewer:30285071
+vscodeenable:30660116
+funwalk2cf:30676044
+</details>
+It does in the latest version; I tested in multiple different installations with different versions + extensions, just happened to use an older one to submit...
+This was fixed via [GitHub Issue Link](https://github.com/microsoft/vscode/issues/197268)

@@ -1,0 +1,40 @@
+Does this issue occur when all extensions are disabled?: Yes
+VS Code Version: 1.84.2
+OS Version: Windows 11 x64 (22H2, 22621.2715)
+Hello, I am the original author of the issue #178460 (Use only unique commit messages for auto-complete) and so far the implemented solution worked quite well but what I noticed is that commit message(s) disappear after undoing the last commit (not sure if the new solution brought this issue).
+Steps to Reproduce:
+2. Make some changes
+4.Cycle through the commit messages, pick one (but a wrong one, accidents do happen! 😉)
+8.Pick the correct commit message
+Calling saveValue replaces the value of the last item in the linked list.
+Instead of this, historyNavigator.add would be better because it wouldnt replace the last existing item.
+I just went through the contribution guide again, and looks like there's no need to particularly get the issue assigned to me before raising the PR.
+It doesnt make any changes when the passed value is same as the value already set, and just returns
+In case the method is invoked with transient = false, it first replaces the last value of the history navigator with its current _value, it then adds the passed value to the history naviagator
+At the end, it just updates _value member with the passed-value
+Note: historyNavigator balances itself by always removing duplicates
+HistoryNavigator = [Msg1, Msg2, Msg3, Msg4, Msg5, ]
+scmService._value = "<empty string"
+- HistoryNavigator => no changes [Msg1, Msg2, Msg3, Msg4, Msg5, ""]
+- setValue gets called with transient = false, passed value is an empty string
+This in-turn causes the undone-commit message to sit at the end of the history navigator and also in the _value member.
+If anytime after this a setValue is called with transient = false, this would cause the last item in history navigator (which is the undone-commit-message) to be overwritten and hence lost.
+Lets assume the history looks like this [Msg1, Msg2, Msg3, Msg4, Msg5, ]
+1) User goes in the history to Msg3
+- HistoryNavigator => no changes [Msg1, Msg2, Msg3, Msg4, Msg5, ""]
+- setValue gets called with transient = false, passed value is an empty string
+- HistoryNavigator (last value replaced with _value="Msg3" and passed-value="empty string" added at the end)
+- setValue gets called with transient = false, passed value is the undone-commit-message
+** Notice how Msg3 is now at the end of the queue and would get replaced the next time setValue is called with transient = false. 
+This would happen the next time a message is committed for eg.
+- HistoryNavigator => no changes [Msg1, Msg2, Msg4, Msg5, "", Msg3]
+- setValue gets called with transient = false, passed value is an empty string
+Msg3 is lost
+The fix for this would be to modify the implementation of setValue when transient = false. 
+Instead of replacing the last value in historyNavigator with the passed-in value we just need to add the passed-in value as another node. 
+Adding a new commit message and committing. 
+This works perfectly fine.
+Moving in the history, committing, undoing last commit, and then commiting again doest remove the undone-commit form the history.
+Unit Tests
+9175 passing (2m)
+60 pending

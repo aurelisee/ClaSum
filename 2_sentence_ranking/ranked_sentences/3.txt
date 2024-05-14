@@ -1,0 +1,59 @@
+Does this issue occur when all extensions are disabled?: Yes/No
+Yes
+VS Code Version: VS Code v1.84.1
+- OS Version: Windows 10 Pro x64 Version 22H2 (Build 19045.3448)
+Steps to Reproduce:
+2. Color picker opens
+4. Color picker closes before you can actually pick the color you want
+![Screenshot](https://github.com/microsoft/vscode/assets/33441569/569e1581-80c2-441a-9666-dc30a503ac43)
+I was actually incorrect when I posted my version number initially. I **am** definitely running on `1.84.1`. 
+And the issue remains the same as my original post. 
+This issue seems to also affect me, I am currently using the insider build of VSCode, but I also tried the latest release, and it also has this bug.
+I have the same problem on VS Code 1.84.1, Windows 11, disabling all installed extensions doesn't help.
+I had the same problem, I installed an older version to fix it.
+It started from the latest VS Code update.
+Hello, I want to report a problem with color selection.
+When selecting a color in the RGBA color palette, it automatically closes and adds the wrong code.
+VS Code version: Code 1.84.1 (2b35e1e6d88f1ce073683991d1eff5284a32690f, 2023-11-06T12:35:59.022Z)
+OS version: Windows_NT x64 10.0.19045
+Modes:
+|Item|Value|
+|---|---|
+|Load (avg)|undefined|
+|Memory (System)|13.85GB (8.86GB free)|
+|Screen Reader|no|
+Extension|Author (truncated)|Version
+---|---|---
+classroom|git|0.0.4
+vscode-pull-request-github|Git|0.76.1
+vscode-language-pack-es|MS-|1.84.2023110809
+vsliveshare|ms-|1.0.5892
+LiveServer|rit|5.7.9
+python383:30185418
+pythontb:30283811
+pythonptprofiler:30281270
+binariesv615:30325510
+vsclangdf:30486550
+azure-dev_surveyone:30548225
+pythonfmttext:30731395
+fixshowwlkth:30771522
+pythonidxpt:30866567
+pythonnoceb:30805159
+aa_t
+I can reproduce this issue on Ubuntu 22.04.2 with VS Code 1.84 installed as a Snap, and also with VS Code Insiders 1.85 (`f346494c77e1245505e53a2ddcab3bfb4ee52e08`) installed as a Snap.
+I wonder if this is related in any way to #136965?
+Also related on Reddit: https://www.reddit.com/r/vscode/comments/17rc8h1/is_the_color_picker_supposed_to_close_once_you/
+Because I wasn't implying that they are the same issue, and if you compare the behaviour described, they are different. 
+I was only asking (the maintainers) if they are _related_.
+### What I did
+The reason for the issue is that whenever a color is picked through any of the selectors, a change is immediately triggered on the editor. 
+That triggers the editor's `onDidChangeModelContent` emitter, therefore the hover widget triggers the `_hideWidgets` method.
+Hey guys, I took a look and it was actually a recent change that caused the issue. 
+What I did
+The reason for the issue is that whenever a color is picked through any of the selectors, a change is immediately triggered on the editor. 
+I just need some help with debugging the previous issue https://github.com/microsoft/vscode/issues/196660 in order to make sure that this is not introducing regressions on that one.
+(ref #198066)
+Version: 1.84.2 (user setup)
+Hi @mk8270 the fix is in Insiders 1.85 or the next release of stable, which will come out in two weeks. 
+You may download the Insiders version of VS Code on https://code.visualstudio.com/insiders/
+What version of VS Code are you using @Irohukl?

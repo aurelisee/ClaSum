@@ -1,0 +1,15 @@
+Repro:
+1. Windows (maybe not needed?)
+2. Set `"terminal.integrated.developer.devMode": true`
+3. Open terminal
+4. Write some text, note the cursor location
+6. Focus the terminal, ???? the cursor is at the start of the textbox
+It also works for me on Windows.
+@Tyriar any other steps required?
+I think the repro is to fill the viewport such that there's a scroll bar, then type.
+Some other repros too:
+CommandDetectionCapability#_handleCommandStartWindows reached max attempts, [true,null]
+- PowerShell is now handled with a specific regex which has an optional space at the end; if matched, a space will be added to the end. This is needed because conpty may not 'render' the final space in the prompt.
+- Return true in _cursorOnNextLine check if there is a single command, as this means it's the first command, so any match should be correct.
+- Increase polling to 1000ms (50x20ms) as it was being hit on my machine.
+Fixes #196758

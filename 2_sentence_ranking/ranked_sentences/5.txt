@@ -1,0 +1,47 @@
+Does this issue occur when all extensions are disabled?: Yes
+The 'Help > Report Issue' dialog can assist with this. -->
+- VS Code Version: 
+  Version: 1.84.0 (Universal)
+  Commit: d037ac076cee195194f93ce6fe2bdfe2969cc82d
+  Date: 2023-11-01T11:30:19.406Z
+  Node.js: 18.15.0
+  OS: Darwin arm64 23.1.0
+- OS Version: macOS Sonoma 14.1
+   ```
+      {
+          },
+2. Open an editor window if not already open
+3. Run the task
+4. Notice that the cursor stays in the editor so the terminal must be clicked on to press enter and dismiss the task
+Date: 2023-11-06T12:35:31.181Z
+Node.js: 18.15.0
+OS: Linux x64 5.15.0-88-generic snap
+My task looks like this:
+          "command": "invoke flash",
+              "showReuseMessage": false,
+Commit: 1a5daa3a0231a0fbba4f14db7ec463cf99d7768e
+Date: 2023-11-09T10:51:52.184Z
+Node.js: 18.15.0
+OS: Windows_NT x64 10.0.19045
+Version: 1.84.2
+Commit: 1a5daa3a0231a0fbba4f14db7ec463cf99d7768e
+Date: 2023-11-09T10:52:57.054Z (23 hrs ago)
+Node.js: 18.15.0
+OS: Darwin arm64 23.0.0
+Version: 1.84.2 (Universal)
+Commit: 1a5daa3a0231a0fbba4f14db7ec463cf99d7768e
+Date: 2023-11-09T10:52:33.687Z
+Node.js: 18.15.0
+OS: Darwin arm64 23.0.0
+- VS Code Version: 1.84.2
+- OS Version: Windows 10 64-bit v. 10.0.19045
+- C++/ C extension: v1.
+In `tasks.json` in C++ folder in `presentation`, `focus` is `true`
+It used to work, but now it doesn't work.
+Now, regardless of whether true or false is selected for `focus`, the window is not focused.
+You have to click on the window after compilation and only then press Enter to close it.
+![Screenshot 2023-11-13 200216](https://github.com/microsoft/vscode/assets/125651292/745fe0e5-eac3-4cdc-a5d6-88965adf905a)
+![Screenshot 2023-11-13 200529](https://github.com/microsoft/vscode/assets/125651292/1790f52e-163e-4433-a424-f82951441a8f)
+I'm having this problem too, but it seems like it's working again in the pre-release version of 1.85 (`1.85-insider`). 
+I don't know what changeset might have fixed it though.
+/duplicate #197394

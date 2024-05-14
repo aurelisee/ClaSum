@@ -1,0 +1,17 @@
+With history not focused:
+![image](https://github.com/microsoft/vscode/assets/2193314/d1516bca-8763-40dd-9b6a-9334582fa54b)
+![image](https://github.com/microsoft/vscode/assets/2193314/385b4112-c9d9-4f9a-bf30-e6fa955bc0f4)
+With history focused:
+![image](https://github.com/microsoft/vscode/assets/2193314/082c6e15-a014-46e3-a107-afda81070fdd)
+2 - Why is history action appearing in not focused?
+History hint was added in #129324
+FYI @gjsjohnmurray the history hint causes some localization issues. 
+I'll fix it up, but your review would be helpful
+Fixes #197071
+After (same as before for English):
+![image](https://github.com/microsoft/vscode/assets/2193314/bb6bb78e-442e-4801-8721-21f194c6bda2)
+- `or` will be localized
+the spaces can be removed from the history hint suffix If it makes sense in the language
+the arrow symbol will not be surfaced to translators
+cc @gjsjohnmurray
+The text looks somewhat different; however, I suppose that's because the search widget no longer says 'find' but 'search' in the placeholder

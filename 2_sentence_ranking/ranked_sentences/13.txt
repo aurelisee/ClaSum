@@ -1,0 +1,14 @@
+Does this issue occur when all extensions are disabled?: Yes
+The 'Help > Report Issue' dialog can assist with this. -->
+- VS Code Version: 1.83.1
+- OS Version: Ubuntu 23.04
+**Steps to Reproduce**
+1. In VSCode, open two terminals
+I was looking into this issue, and like @SimonSiefke suspected, it seems like in this instance, the aria-title is a Markdown string, which is why it's showing up as an object. 
+I'm not exactly sure what the best way to handle the Markdown string would be. 
+Would that be sufficient, or should I look for another solution? 
+Not exactly sure of the guidelines surrounding aria.
+Can you call `.toString()` on the markdown string? 
+If not, using the tooltip seems fine.
+Because the IIconLabelValueOptions interface accepts both a string or a markdown string for the title, I'm unsure of a function that will allow me to just get the markdown property without causing other issues. 
+Plus, in this case, I don't know if the string is even suitable for an aria-label. 

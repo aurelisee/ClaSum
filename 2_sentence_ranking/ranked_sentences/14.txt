@@ -1,0 +1,21 @@
+I tested on Win11 & Win10.
+It works as long as you start a new workbook and don't save the Jupyter notebook. 
+Once you save the notebook, your pastes of images from the clipboard will no longer be treated as inline attachments.
+_Originally posted by @beckerben in https://github.com/microsoft/vscode-jupyter/discussions/14408#discussioncomment-7180960_
+Possibly getting overridden by a markdown file paste provider? @mjbvz
+> update: disregard, see your reply now on the thread
+All cases are performed with a screenshot copied to the clipboard and pasting into markdown notebook cells using ctrl+v. 
+Using Windows 11 and current insiders. 
+`Commit: 7dff07893ac160244db210e574eccc05f1cba2cb`
+With setting `"ipynb.pasteImagesAsAttachments.enabled": false`
+![image1](https://github.com/microsoft/vscode/assets/12552271/2d4546d5-7fe4-4b20-88fc-e5094a9635d2)
+![image2](https://github.com/microsoft/vscode/assets/12552271/811558b8-6677-4d9f-9b4e-c671a3549066)
+  - `ctrl+v` results in correct inline attachment image link pasted, renders correctly
+The version I just tested with is updated now and it is working as expected with the `"ipynb.pasteImagesAsAttachments.enabled": true`
+Commit: f1b07bd25dfad64b0167beb15359ae573aecd2cc
+Date: 2023-10-10T23:48:05.904Z
+Node.js: 18.15.0
+OS: Windows_NT x64 10.0.19045
+Will disable pasting into untitled notebooks with the setting off
+Since the notebook does not exist on disk yet, there's no way to write a relative path in it. 
+Just disable the feature since there's nothing else we can reasonably do here

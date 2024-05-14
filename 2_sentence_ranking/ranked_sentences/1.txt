@@ -1,0 +1,28 @@
+1. Click the dropdown caret
+2. Hover over an enum value
+3. :bug: dropdown appears in top left 
+<img width="574" alt="image" src="https://github.com/microsoft/vscode/assets/30305945/3eb97c23-27ac-4c41-a2a4-f6404421ec88">
+I have seen this occasionally too, but haven't discovered a repro.
+joyceerhl if you repro, then please `vscode-bisect` it to the change!
+???? `vscode-bisect` claims there is no released insiders for 657bb89984f37b810b250955570593cde0cd62eb even though I got that from the insiders builds page after checking `Show released only` based on https://github.com/microsoft/vscode/issues/197755#issuecomment-1811538701
+I cannot repro in Code-OSS :( 
+@joyceerhl `vscode-bisect` goes over unreleased builds as well. 
+What is the commits range?
+@joyceerhl thats a different bu
+FWIW, I tried debugging in dev tools
+@joyceerhl interesting, I wonder if maybe we cannot find the `window` for the element in `getDomNodePagePosition`, there were recent changes. 
+* ???? sometimes the dropdown shows at (0,0) but not always
+When attempting to hover a dropdown list, it will jump to (0,0). 
+Then when trying to hover it while it's at (0,0) will cause it to jump back to the list it came from.
+OS: Windows_NT x64 10.0.22631
+- VSCode Insiders `1.85.0-insider`
+I did not personally see this issue until tonight.
+It started on a previous version of Insiders, but I allowed it to update before coming to file a bug report to see if it was a known issue that was already fixed. 
+It is still happening on the latest. 
+But seems to be happening less frequently now.
+Edit: There is another bug with the dropdown menus that may potentially help with this issue as it has a similar effect. 
+If you open the Settings UI, open a dropdown, then close the Settings UI window by clicking its 'x' in the tab, the dropdown list will remain visible. 
+Hovering over this list will cause it to jump to (0,0) as well. _(Hovering on it at (0,0) wont cause it to keep moving in this situation though.)_
+Here is a video showing this additional bug:
+https://github.com/microsoft/vscode/assets/1422090/65183b2e-eba1-4eae-b5ca-5c4419def838
+@bpasero I cannot repro anymore in the latest Insiders :+1:
